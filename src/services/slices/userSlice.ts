@@ -25,7 +25,7 @@ type TUserState = {
   resetPasswordError: string | null;
 };
 
-const initialState: TUserState = {
+export const initialState: TUserState = {
   isAuthChecked: false,
   isAuthenticated: false,
   user: null,
