@@ -1,7 +1,8 @@
 import feedReducer, {
   fetchFeeds,
   createOrder,
-  clearOrderModalData
+  clearOrderModalData,
+  initialState
 } from './feedSlice';
 import { TOrder } from '@utils-types';
 
@@ -23,18 +24,6 @@ const mockFeedData = {
 };
 
 describe('feed slice', () => {
-  const initialState = {
-    orders: [],
-    total: 0,
-    totalToday: 0,
-    isFeedLoading: true,
-    profileOrders: [],
-    isProfileOrdersLoading: false,
-    orderRequest: false,
-    orderModalData: null,
-    currentOrder: null,
-    isCurrentOrderLoading: false
-  };
 
   it('должен вернуть начальное состояние', () => {
     expect(feedReducer(undefined, { type: 'unknown' })).toEqual(initialState);

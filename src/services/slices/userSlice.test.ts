@@ -3,7 +3,8 @@ import userReducer, {
   registerUser,
   logoutUser,
   getUser,
-  authChecked
+  authChecked,
+  initialState
 } from './userSlice';
 import { TUser } from '@utils-types';
 
@@ -13,17 +14,6 @@ const mockUser: TUser = {
 };
 
 describe('user slice', () => {
-  const initialState = {
-    isAuthChecked: false,
-    isAuthenticated: false,
-    user: null,
-    isUserLoading: false,
-    loginError: null,
-    registerError: null,
-    updateUserError: null,
-    forgotPasswordError: null,
-    resetPasswordError: null
-  };
 
   it('должен вернуть начальное состояние', () => {
     expect(userReducer(undefined, { type: 'unknown' })).toEqual(initialState);

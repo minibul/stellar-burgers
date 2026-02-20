@@ -3,7 +3,8 @@ import constructorReducer, {
   addIngredient,
   removeIngredient,
   moveIngredient,
-  resetConstructor
+  resetConstructor,
+  initialState
 } from './constructorSlice';
 import { TIngredient } from '@utils-types';
 
@@ -36,7 +37,6 @@ const mockIngredient: TIngredient = {
 };
 
 describe('burgerConstructor slice', () => {
-  const initialState = { bun: null, ingredients: [] };
 
   it('должен вернуть начальное состояние', () => {
     expect(constructorReducer(undefined, { type: 'unknown' })).toEqual(
